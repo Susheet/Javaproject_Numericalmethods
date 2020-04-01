@@ -1,0 +1,21 @@
+
+package bisectionmethod;
+import java.util.Scanner;
+class Getpoly {
+    public static int a,b,c;
+     public static void getpoly(){
+ 
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the coefficients of polynomial in the form ax^2+bx+c");
+        System.out.println("enter a=");
+        a=sc.nextInt();
+        System.out.println("enter b=");
+        b=sc.nextInt();
+        System.out.println("Enter c=");
+        c=sc.nextInt();
+        System.out.println("the polynomial is"+a+"x^2+"+b+"x+"+c);
+    
+}
+}
+
+
