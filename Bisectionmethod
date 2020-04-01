@@ -1,0 +1,41 @@
+
+package bisectionmethod;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util.Scanner;
+
+public class Bisectionmethod extends Getpoly {
+
+static double func(double a,double b,double c,double x){
+    return a*x*x+b*x+c;
+}
+
+    public static void bisection() {
+      
+        Scanner interval = new Scanner(System.in);
+        getpoly();                                                                      //getting polynomial
+        System.out.println("Enter interval of l and h");                                // getting the interval 
+        System.out.println("l=");
+        double l = interval.nextDouble();
+        System.out.println("h=");
+        double h = interval.nextDouble();
+        if((func(Getpoly.a,b,c,l)*func(a,b,c,h))>=0)                                   //checking for condition for appropriate 
+             System.out.println("You have not assumed the right interval");            //interval 
+        else{
+              while(java.lang.Math.abs(l-h)>= 0.01){                                   //iterating the loop until
+                double m = (l+h)/2;                                                    // root is .01 close to error
+                if(func(a,b,c,m)==0)
+                    break;
+                else if((func(a,b,c,m)*func(a,b,c,l))<0)
+                        h=m;
+                else 
+                    l=m;
+                System.out.println("value of root="+m);
+             }
+        }
+        
+     }
+    
+ }
+
