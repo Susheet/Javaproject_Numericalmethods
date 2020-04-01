@@ -1,0 +1,106 @@
+package bisectionmethod;
+import java.awt.*;
+import java.awt.event.*;
+
+ public class awtevent  {
+     public static void main(String args[]){
+         try{
+         Frame aframe = new Frame("Numerical methods"); 
+         aframe.setBackground(Color.LIGHT_GRAY);
+         aframe.setLayout(null);
+         aframe.setSize(300,300);
+        aframe.setResizable(true);
+        aframe.setLocation(100,100);
+        aframe.setVisible(true);
+        
+        Button b = new Button("OK");
+        b.setBounds(120,170,30,30);
+        b.setVisible(true);
+        aframe.add(b);
+        
+       
+        Choice ch= new Choice();
+        ch.add("Bisectionmethod");
+        ch.add("Newton Raphson method");
+        ch.add("Regula Falsi method");
+        ch.add("Gauss seidel method");
+        ch.setVisible(true);
+        ch.setBounds(50,100,200,50);
+        aframe.add(ch);
+        b.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                int z=ch.getSelectedIndex();
+                switch(z)
+                {
+                    case 0:
+                         Frame bframe = new Frame("Bisection method");
+                         bframe.setSize(500,500);
+                         bframe.setLocation(100,100);
+                         
+                         bframe.addWindowListener(new WindowAdapter(){
+                             public void windowClosing(WindowEvent we){
+                                 System.exit(0);
+                             }
+                         });
+                         Label a1 = new Label("coefficient of x^2=");
+                         a1.setBounds(20,40,86,20);
+                         TextField at1 = new TextField();
+                         at1.setBounds(150,40,20,20);
+                         bframe.add(at1);
+                         bframe.add(a1);
+                         
+                        Label b1 = new Label("coefficient of x=");
+                         b1.setBounds(20,60,86,20);
+                         TextField bt1 = new TextField();
+                         bt1.setBounds(150,60,20,20);
+                         bframe.add(bt1);
+                         bframe.add(b1);
+                         
+                         Label c1 = new Label("constant c=");
+                         c1.setBounds(20,80,86,20);
+                         TextField ct1 = new TextField();
+                         ct1.setBounds(150,80,20,20);
+                         bframe.add(ct1);
+                         bframe.add(c1);
+                                                 
+                         Button generatedpoly = new Button("polynomial generated");
+                         generatedpoly.setBounds(70,110,140,30);
+                         bframe.add(generatedpoly);
+                         bframe.setLayout(null);
+                         bframe.setVisible(true);
+
+                         
+                         break;
+                    case 1:
+                        System.out.println("Newt");
+                        break;
+                    case 2:
+                        System.out.println("regula");
+                        break;
+                    case 3:
+                        System.out.println("Gauss");
+                        break;
+                    default:
+                        System.out.println("choose an option");
+                        break;
+                        
+                }
+             }
+        });
+        
+        Label l1=new Label("Roots of quadratic equation");
+        l1.setBounds(90,10,200,100);
+        aframe.add(l1);
+       
+        aframe.addWindowListener(new WindowAdapter(){                                  
+            public void windowClosing(WindowEvent we){
+                System.exit(0);
+            } 
+        });
+         }catch(Exception e)
+         {
+              e.printStackTrace();
+              
+         }
+     }
+ }
